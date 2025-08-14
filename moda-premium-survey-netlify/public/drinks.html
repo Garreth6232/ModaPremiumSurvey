@@ -1,14 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Step 2 — Drinks</title>
-  </head>
-  <body>
-    <h1>Step 2 — Drinks</h1>
-    <div id="app">PASTE CODE HERE</div>
-    <script src="js/rating.js"></script>
-    <script src="js/formflow.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Step 2 — Drinks</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Step 2 of 3 — Drinks</h1>
+  <p class="subtitle">Rate each item (1–5 stars)</p>
+</header>
+
+<main class="container">
+  <form class="card" id="drinks-form" novalidate>
+    <div class="question">
+      <div class="q-label">Service Staff</div>
+      <div class="rating" data-name="drinks_service_staff"></div>
+      <input type="hidden" name="drinks_service_staff"/>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Taste</div>
+      <div class="rating" data-name="drinks_taste"></div>
+      <input type="hidden" name="drinks_taste"/>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Value</div>
+      <div class="rating" data-name="drinks_value"></div>
+      <input type="hidden" name="drinks_value"/>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Variety</div>
+      <div class="rating" data-name="drinks_variety"></div>
+      <input type="hidden" name="drinks_variety"/>
+    </div>
+
+    <div class="question">
+      <div class="q-label">Wait Time</div>
+      <div class="rating" data-name="drinks_wait_time"></div>
+      <input type="hidden" name="drinks_wait_time"/>
+    </div>
+
+    <p class="form-error" hidden>Please rate all 5 items.</p>
+    <div class="actions">
+      <a class="btn" href="staff.html">Back</a>
+      <button class="btn primary">Next — Food</button>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer"><small>&copy; 2025</small></footer>
+<script src="js/rating.js"></script>
+<script src="js/formflow.js"></script>
+</body>
 </html>
+
