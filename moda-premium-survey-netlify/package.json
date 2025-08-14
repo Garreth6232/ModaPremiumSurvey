@@ -1,13 +1,14 @@
 {
   "name": "moda-premium-survey-netlify",
-  "version": "1.0.0",
+  "private": true,
   "type": "module",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static site — nothing to build'",
+    "start": "netlify dev"
+  },
   "dependencies": {
     "@netlify/blobs": "^8.0.0"
   },
-  "scripts": {
-    "dev": "netlify dev",
-    "build": "echo 'Static site'",
-    "start": "netlify dev"
-  }
+  "devDependencies": {}
 }
