@@ -1,1 +1,46 @@
-/* PASTE CODE HERE */
+:root {
+  --brand: #c8102e;
+  --ink: #222;
+  --muted: #667;
+  --bg: #f7f7fa;
+  --card: #fff;
+  --border: #e5e7eb;
+  --focus: #1d4ed8;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, "Noto Sans"; color: var(--ink); background: var(--bg); }
+
+.site-header, .site-footer { text-align: center; padding: 1.25rem; }
+.site-header h1 { margin: 0 0 .25rem; font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+.subtitle { margin: 0; color: var(--muted); }
+
+.container { max-width: 840px; margin: 0 auto; padding: 1rem; }
+
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; box-shadow: 0 6px 20px rgba(0,0,0,.04); }
+.card.center { text-align: center; }
+h2 { margin-top: 0; }
+
+.field { display: grid; gap: .35rem; margin-bottom: 1rem; }
+.field > span { font-size: .95rem; color: var(--muted); }
+.field input[type="text"], .field textarea { width: 100%; border: 1px solid var(--border); border-radius: 10px; padding: .65rem .8rem; font-size: 1rem; outline: none; }
+.field input[type="text"]:focus, .field textarea:focus { border-color: var(--focus); box-shadow: 0 0 0 3px rgba(29,78,216,.15); }
+
+.question { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .75rem 1rem; padding: .5rem 0; border-bottom: 1px dashed var(--border); }
+.question:last-of-type { border-bottom: 0; }
+.q-label { font-weight: 600; color: var(--ink); }
+
+.rating { display: inline-flex; gap: .4rem; align-items: center; }
+.star { width: 32px; height: 32px; background: url("../assets/star.png") center/contain no-repeat; filter: grayscale(100%) brightness(1.2) opacity(.65); border: none; outline: none; padding: 0; cursor: pointer; transition: transform .08s ease, filter .12s ease; }
+.star.selected { filter: none; }
+.star:hover { transform: scale(1.05); }
+.star:focus-visible { outline: 3px solid rgba(29,78,216,.25); border-radius: 6px; }
+
+.actions { display: flex; gap: .6rem; justify-content: flex-end; margin-top: 1.25rem; }
+.btn { appearance: none; border: 1px solid var(--border); background: #fff; color: var(--ink); padding: .6rem .9rem; border-radius: 10px; text-decoration: none; cursor: pointer; font-weight: 600; }
+.btn:hover { background: #fafafa; }
+.btn.primary { background: var(--brand); color: #fff; border-color: var(--brand); }
+.btn.primary:hover { filter: brightness(1.05); }
+
+.form-error { margin-top: .5rem; color: #991b1b; background: #fee2e2; border: 1px solid #fecaca; padding: .5rem .75rem; border-radius: 10px; }
+
