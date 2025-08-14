@@ -1,36 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Moda Center — Premium Survey</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-<header class="site-header">
-  <h1>Moda Center — Premium Spaces Survey</h1>
-  <p class="subtitle">Staff • Drinks • Food</p>
-</header>
+  <header class="site-header">
+    <h1>Moda Center — Premium Spaces Survey</h1>
+    <p class="subtitle">Staff • Drinks • Food</p>
+  </header>
 
-<main class="container">
-  <form class="card" id="intro-form">
-    <h2>Welcome</h2>
-    <p>This quick survey has three steps and takes under a minute.</p>
-    <label class="field">
-      <span>Suite / Section (optional but helpful)</span>
-      <input type="text" name="suite_or_section" placeholder="e.g., Suite 15, Section 118"/>
-    </label>
-    <div class="actions">
-      <button class="btn primary">Start — Staff</button>
+  <main class="container">
+    <!-- Display category icons on the landing page -->
+    <div class="icon-header">
+      <!-- Use emojis instead of external images for the landing page icons -->
+      <span class="icon" aria-hidden="true">👥</span>
+      <span class="icon" aria-hidden="true">🥤</span>
+      <span class="icon" aria-hidden="true">🍽️</span>
     </div>
-  </form>
-</main>
-
-<footer class="site-footer">
-  <small>&copy; 2025 Moda Center (example)</small>
-</footer>
-
-<script src="js/formflow.js"></script>
+    <form class="card" id="intro-form">
+      <h2>Welcome</h2>
+      <p>This quick survey has three steps and takes under a minute.</p>
+      <label class="field">
+        <span>Suite / Section (optional but helpful)</span>
+        <input type="text" name="suite_or_section" placeholder="e.g., Suite 15, Section 118" />
+      </label>
+      <div class="actions">
+        <button class="btn primary" type="submit">Start — Staff</button>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <small>&copy; 2025 Moda Center (example)</small>
+  </footer>
+  <script src="js/formflow.js"></script>
 </body>
 </html>
-
