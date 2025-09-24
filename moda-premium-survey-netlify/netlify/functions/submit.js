@@ -12,10 +12,7 @@ export default async (req, ctx) => {
   try {
     const data = await req.json();
 
-    // Basic validation
-    const required = [
-      "suite_or_section",
-
+    const ratingKeys = [
       // Staff (3)
       "staff_friendliness",
       "staff_attentiveness",
@@ -37,7 +34,7 @@ export default async (req, ctx) => {
       "food_wait_time"
     ];
 
-    for (const k of required) {
+    for (const k of ratingKeys) {
       if (typeof data[k] === "undefined" || data[k] === "") {
         return new Response(JSON.stringify({ ok: false, error: `Missing field: ${k}` }), {
           status: 400,
@@ -46,8 +43,9 @@ export default async (req, ctx) => {
       }
     }
 
+    const suite = typeof data.suite_or_section === "string" ? data.suite_or_section.trim() : "";
+
     // Validate numeric ratings
-    const ratingKeys = required.filter((k) => k !== "suite_or_section");
     for (const rk of ratingKeys) {
       const n = Number(data[rk]);
       if (!v(n)) {
@@ -59,10 +57,16 @@ export default async (req, ctx) => {
       data[rk] = n;
     }
 
+    const ratings = Object.fromEntries(ratingKeys.map((key) => [key, data[key]]));
+
+    const comments = typeof data.comments === "string" ? data.comments.trim() : "";
+
     const record = {
       timestamp: new Date().toISOString(),
       venue: "Moda Center Premium",
-      ...data
+      suite_or_section: suite,
+      ...ratings,
+      comments
     };
 
     const store = getStore("responses"); // site-wide store
